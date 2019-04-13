@@ -2,8 +2,8 @@ package example
 
 import io.micronaut.context.ApplicationContext
 import io.micronaut.runtime.server.EmbeddedServer
+import org.amshove.kluent.shouldEqual
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 /**
  * HelloControllerTest
@@ -18,6 +18,6 @@ class HelloControllerTest {
 
     @Test
     fun `call hello`() {
-        assertEquals("Hello Debop", helloClient.hello("Debop").blockingGet())
+        helloClient.hello("Debop").blockingGet() shouldEqual "Hello Debop"
     }
 }

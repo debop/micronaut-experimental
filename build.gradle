@@ -36,7 +36,7 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'io.micronaut:micronaut-bom:1.0.1'
+            mavenBom "io.micronaut:micronaut-bom:$micronaut"
         }
 
         dependencies {
@@ -54,7 +54,6 @@ subprojects {
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
         compile "org.jetbrains.kotlin:kotlin-reflect"
-        testCompile "org.jetbrains.kotlin:kotlin-test"
 
         annotationProcessor "io.micronaut:micronaut-inject-java"
 
@@ -75,6 +74,8 @@ subprojects {
 
         testCompile "org.junit.jupiter:junit-jupiter-api:5.3.2"
         testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.3.2"
+
+        testCompile "org.amshove.kluent:kluent:1.49"
     }
 
     test {
